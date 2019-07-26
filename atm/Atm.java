@@ -7,57 +7,57 @@ public class Atm {
     Scanner sc=new Scanner(System.in);
     public void Deposit()
     {
-        System.out.println("enter amount");
+        System.out.println("Enter amount:");
         deposit=sc.nextInt();
-        System.out.println("taile deposit gareko amount:"+deposit);
+        System.out.println("Enter amount that you want to deposit:"+deposit);
     }
     public void Withdrawl()
     {
         int balance;
-        System.out.println("kati paisa chahiyo enter gar");
+        System.out.println("Enter the amount that you want to withdraw:");
         balance=sc.nextInt();
         if(balance<500)
         {
-            System.out.println("tero paisa chaheko vanda kam xa ...bank gayera paisa varera aaiza");
+            System.out.println("Your balance is not enough.");
         }
         else if (balance>deposit)
         {
-            System.out.println("tero paisa chaheko vanda kam xa ...bank gayera paisa varera aaiza");
+            System.out.println("Your balance is not enough.");
         }
         else if (balance==0)
         {
-            System.out.println("deposit is 0");
+            System.out.println("deposit = 0");
         }
         else
         {
-            System.out.println("ekxin koor. transaction hudaixa ..ani paisa lagera jaa");
+            System.out.println("Your transaction has been processing.Please wait for cash and receipt.");
             deposit-=balance;
         }
     }
     public void BalanceInfo()
     {
-        System.out.println("tero baki raheko paisa:"+deposit);
+        System.out.println("Total amount:"+deposit);
     }
     public void PinChange()
     {
-        System.out.println("tero pahile ko pin hana:");
+        System.out.println("Enter your current pin number:");
         pin=sc.nextInt();
         if(pin==currpin)
         {
-            System.out.println("naya pin haan:");
+            System.out.println("Enter your new pin:");
             newpin=sc.nextInt();
-            System.out.println("tero pin chage vaisakyo.");
+            System.out.println("Your pin has been successfully changed.");
         }
         else
         {
-            System.out.println("pin milena. feri try gar.");
+            System.out.println("Incorrect pin,please try again.");
         }
     }
     public void Menu()
     {
         System.out.println("1.deposit\n2.withdrawl\n3.balanceinfo\n4.pin change\n5.exit");
         int choice;
-        System.out.println("k garne mann xa tehi haan menu ma vako matra:");
+        System.out.println("Please enter your choice:");
         choice=sc.nextInt();
         switch(choice) {
             case 1:
